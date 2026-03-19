@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Phoppa Asad!</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            /* Shandar Festive Background Gradient */
+            background: radial-gradient(circle, #fff0f5, #fce4ec, #f8bbd0);
+            font-family: 'Segoe UI', Arial, sans-serif;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .hidden { display: none !important; }
+
+        /* --- Step 1: START SCREEN --- */
+        #start-screen button {
+            padding: 25px 60px;
+            font-size: 30px;
+            background: linear-gradient(45deg, #ff4081, #f50057);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 15px 30px rgba(255, 64, 129, 0.4);
+            transition: all 0.3s ease;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        #start-screen button:hover { transform: scale(1.1) translateY(-5px); box-shadow: 0 20px 40px rgba(255, 64, 129, 0.6); }
+
+        /* --- Step 2: CAKE SCREEN (Now FULL & FESTIVE) --- */
+        #cake-screen {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            cursor: pointer;
+            width: 100%;
+            height: 100%;
+            transition: opacity 0.8s ease;
+            position: relative;
+        }
+
+        /* 1. Bara aur Rangeen Naam sabse uper */
+        .big-name-banner {
+            font-size: 50px; /* Bara Size */
+            font-weight: 900;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            /* Rainbow Color Effect */
+            background: linear-gradient(to right, #ef5350, #f48fb1, #7e57c2, #2196f3, #26a69a, #ffca28);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073; }
+            to { text-shadow: 0 0 20px #fff, 0 0 30px #ff4d4d, 0 0 40px #ff4d4d; }
+        }
+
+        /* 2. Cake Center Piece */
+        .cake-container {
+            font-size: 160px; /* Cake bara kiya */
+            position: relative;
+            display: inline-block;
+            margin: 0 40px;
+        }
+
+        /* 3. Empty elements ko bharne ke liye Party Icons */
+        .party-decorations {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 80px; /* Decorations size */
+            gap: 20px;
+        }
+
+        /* Instructions line */
+        .tap-instruction {
+            color: #d81b60;
+            font-weight: bold;
+            margin-top: 30px;
+            font-size: 20px;
+            background-color: rgba(255, 255, 255, 0.7);
+            padding: 10px 20px;
+            border-radius: 20px;
+        }
+
+        /* Background Confetti Spread (Bharo visual) */
+        .confetti-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* --- Step 3: BALLOONS (Fixed) --- */
+        .balloon {
+            position: absolute;
+            bottom: -200px; /* Thora niche se start */
+            width: 70px;
+            height: 90px;
+            border-radius: 50%;
+            z-index: 100;
+            animation: floatUp 4s ease-in forwards;
+        }
+        .balloon::after {
+            content: "";
+            position: absolute;
+            bottom: -35px;
+            left: 50%;
+            width: 2px;
+            height: 35px;
+            background: rgba(0,0,0,0.15);
+        }
+
+        @keyframes floatUp {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-130vh) rotate(30deg); opacity: 0; }
+        }
+
+        /* --- Step 4: ENVELOPE --- */
+        #envelope-screen { width: 90%; max-width: 500px; z-index: 10; }
+        .envelope {
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            border-top: 10px solid #f50057;
+            animation: popIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+        }
+        @keyframes popIn { from { transform: scale(0.5); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+        .message-title { color: #f50057; font-size: 28px; margin-bottom: 25px; font-weight: bold; }
+        .message-body { font-size: 18px; line-height: 1.8; color: #333; text-align: left; background: #fffaf0; padding: 20px; border-radius: 10px; border: 1px dashed #f8bbd0; }
+        .signature { margin-top: 30px; font-size: 14px; color: #888; text-transform: lowercase; letter-spacing: 1.5px; }
+
+    </style>
+</head>
+<body>
+
+    <div id="start-screen">
+        <button onclick="showCake()">PRESS START 🎁</button>
+    </div>
+
+    <div id="cake-screen" class="hidden" onclick="triggerBalloons()">
+        
+        <div class="confetti-bg">
+            <span style="position:absolute; top:10%; left:10%; font-size:20px; color:#ff4081;">🌸</span>
+            <span style="position:absolute; top:20%; left:80%; font-size:25px; color:#2196f3;">✨</span>
+            <span style="position:absolute; top:50%; left:15%; font-size:15px; color:#ffeb3b;">🎉</span>
+            <span style="position:absolute; top:70%; left:85%; font-size:22px; color:#4caf50;">🌸</span>
+        </div>
+
+        <div class="big-name-banner">Happy Birthday Asad</div>
+
+        <div class="party-decorations">
+            <span>🎁</span> <div class="cake-container">🎂</div>
+            <span>🎉</span> </div>
+
+        <p class="tap-instruction">Click on the Cake to explode celebration!</p>
+    </div>
+
+    <div id="envelope-screen" class="hidden">
+        <div class="envelope">
+            <div class="message-title">Happy Birthday, Phoppa!</div>
+            <div class="message-body">
+                Dearest Phoppa Asad,<br><br>
+                Wishing you a birthday that is as wonderful, joyful, and "level" as you are. You have always been a source of great advice and endless happiness for all of us. On this special day, I pray that your life remains filled with boundless health, success, and smiling moments in every step you take. May you keep inspiring us just like you always do!<br><br>
+                Have the absolute best day ever!
+            </div>
+            <div class="signature">created by rayyan qureishi</div>
+        </div>
+    </div>
+
+    <script>
+        function showCake() {
+            document.getElementById('start-screen').classList.add('hidden');
+            document.getElementById('cake-screen').classList.remove('hidden');
+        }
+
+        function triggerBalloons() {
+            const cakeScreen = document.getElementById('cake-screen');
+            
+            // 1. Create Many Colorful Balloons (Ziada quantity)
+            for (let i = 0; i < 25; i++) {
+                setTimeout(() => {
+                    const balloon = document.createElement('div');
+                    balloon.className = 'balloon';
+                    // Random positions and colors
+                    balloon.style.left = Math.random() * 95 + 'vw';
+                    const colors = ['#f50057', '#ffeb3b', '#2196f3', '#4caf50', '#ff9800', '#e040fb'];
+                    balloon.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    document.body.appendChild(balloon);
+                }, i * 80); // Fasters creation
+            }
+
+            // 2. Slow Fade out cake screen
+            cakeScreen.style.opacity = '0';
+
+            // 3. Show envelope after balloons have started flying up
+            setTimeout(() => {
+                cakeScreen.classList.add('hidden');
+                document.getElementById('envelope-screen').classList.remove('hidden');
+            }, 3200);
+        }
+    </script>
+</body>
+</html>
